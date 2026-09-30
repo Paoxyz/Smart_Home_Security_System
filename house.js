@@ -1,0 +1,1 @@
+window.HOUSE = 'house.jpg';

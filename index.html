@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Smart Home Security Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Main Dashboard Area -->
+    <div class="main">
+      <div class="top">
+        <div class="thumb" id="houseThumb"></div>
+        <div>
+          <h1>Home</h1>
+          <small>Mampang, Panama Drive, Zakmboanga City.</small>
+        </div>
+        <div class="select" id="camSel" role="button">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10l6-3v10l-6-3z" fill="currentColor"/></svg>
+          <span id="camName">Cameras</span>
+        </div>
+        <div class="sp"></div>
+        <button class="ico" id="bell" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 22a2 2 0 002-2h-4a2 2 0 002 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
+          <span class="badge" id="badge"></span>
+        </button>
+        <button class="ico" id="theme" aria-label="Toggle Theme">☾</button>
+        <button class="ico" id="fs" aria-label="Toggle Fullscreen">⛶</button>
+      </div>
+
+      <!-- Left Controls: Cameras & Locks -->
+      <div class="left">
+        <h3>Cameras <span id="camCount">0</span></h3>
+        <div class="list" id="cams"></div>
+        <h3 style="margin-top: 14px;">Locks <span id="lockCount">0</span></h3>
+        <div class="list" id="locks"></div>
+      </div>
+
+      <!-- Center Stage: Interactive House Plan -->
+      <div class="stage">
+        <div class="head">
+          <div>
+            <h2>Home</h2>
+            <small id="area">Backyard</small>
+          </div>
+          <div class="tabs" id="tabs">
+            <button class="pill on" data-f="f1">1 Floor</button>
+            <button class="pill" data-f="f2">2 Floor</button>
+            <button class="pill" data-f="gar">Garage</button>
+          </div>
+        </div>
+        <div class="scene" id="scene"></div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="side">
+      <div class="bar">
+        <div class="sp"></div>
+        <div class="user">
+          <span class="av" style="background:#5f7fd9;margin:0;">LA</span>
+          <span>Lacson A.</span>
+        </div>
+      </div>
+
+      <div>
+        <h2>Smart Home<b>Security Systems</b></h2>
+      </div>
+
+      <div>
+        <h4>Members</h4>
+        <div class="mem" id="mem"></div>
+        <div class="info" id="minfo"></div>
+      </div>
+
+      <div>
+        <h4>Activity</h4>
+        <div class="days" id="days"></div>
+        <div class="tl" id="tl"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pop" id="pop"></div>
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts in strict execution order -->
+  <script src="house.js"></script>
+  <script src="script.js"></script>
+  <script src="features.js"></script>
+</body>
+</html>
